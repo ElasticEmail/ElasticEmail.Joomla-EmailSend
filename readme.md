@@ -30,11 +30,6 @@ If you can’t find the answer, please contact our [Support Team](http://elastic
 ### How to get started with Elastic Email?
 Start with Elastic Email by creating a new account on our [website](https://elasticemail.com/).
 
-### What kind of emails I can send with Elastic Email Sender plugin?
-With the new update (1.1.2), Elastic Email Sender has an option to switch between transactional and marketing emails. It means that from now on, you can easily decide what kind of emails you would like to send. By default, you will be sending marketing emails that should be used for all kind of marketing announcements: newsletters, marketing updates, sales offers, etc.
-But if you would like to send more technical emails like notifications about your service or app status, password reset or notifications about orders, you can use transactional emails that should be used for all kind of transactions between users and service/app owner.
-Please note that users who unsubscribe from marketing emails can still receive transactional emails. In case of any questions please contact our [Customer Success team](https://elasticemail.com/help/) - they are available 24/7!
-
 ### How to setup a domain to start sending?
 Find out [how to verify your domain](https://elasticemail.com/support/user-interface/settings/your-domain/) on our Resources page.
 
