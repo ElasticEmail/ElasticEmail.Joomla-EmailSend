@@ -12,15 +12,22 @@ In case of any questions or concerns, feel free to contact us anytime.
 ## What is Elastic Email Sender plugin?
 
 Elastic Email Sender is an easy way to maintain all the aspects related to your email campaigns. From creating and sending your emails to monitoring and managing campaigns stats.
-Elastic Email Sender replaces Joomla default Send() function by using an API integration with Elastic Email to send an outgoing email from your Joomlas installation.
+Elastic Email Sender replaces Joomla default PHPMailer function by using an API integration with Elastic Email to send an outgoing email from your Joomlas installation.
 Thanks to this, you can track all the parameters of your delivery, use Private IP addresses to get full control over your sending IP address, maintain reputation and delivery, and secure your data better than ever.
 
 ## How to get started?
 
 
 ### Installing
+1. Download the extension "com_eesender.zip" to your local machine.
+2. From the administrator dashboard of your Joomla site  select Extensions -> Install
+3. Click the Browse button and select the extension package on your local machine.
+4. Click the Upload File & Install button.
 
 
+Note: You can also go directly to the Elastic Email Sender Component and provide valid API key to your Elastic Email Account there. 
+After validation, you should see the component, and the plugin should be activated by itself.
+If not please see In Extensions -> Manage if Elasti Email plugin is activated.
 ## Frequently Asked Questions
 
 ### Where can I find more details?
@@ -53,7 +60,7 @@ You can see your reports and sending history in Reports/Email logs. Keep in mind
 
 ## Versioning
 
-###### 1.0
+###### 0.9.0
 * Public release
 
 ## Authors
