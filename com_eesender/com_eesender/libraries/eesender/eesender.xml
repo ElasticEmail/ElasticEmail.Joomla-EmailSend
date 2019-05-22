@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="library" version="2.5" method="upgrade">
+    <name>Elastic Email Libraries</name>
+    <libraryname>eesender</libraryname>
+    <description>Elastic Email is a joomla library that integrates with the Elasic Email API!</description>
+    <creationDate>2019-04-10</creationDate>
+    <author>Elastic Email</author>
+    <authorEmail>supportteam@elasticemail.com</authorEmail>
+    <authorUrl>https://elasticemail.com</authorUrl>
+    <copyright>(C)2010-2019 ElasticEmail</copyright>
+    <license>GNU GPLv2 or later</license>
+    <version>1.0.0</version>
+    <files folder="libraries/eesender">
+        <file>include.php</file>
+        <file>EEsenderAccount.php</file>
+        <file>EEsenderAutoload.php</file>
+        <file>EEsenderExceptions.php</file>
+        <file>EEsenderMessage.php</file>
+        <file>EEsenderRequest.php</file>
+        <file>EEsenderSender.php</file>
+        <file>EEsenderReports.php</file>
+    </files>
+</extension>

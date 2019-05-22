@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <fieldset name="basic" description="COM_EESENDER_BASIC_CONFIG" label="COM_EESENDER_CONFIG">
+       
+        <field name="apikey" type="text" default="" size="120" label="COM_EESENDER_APIKEY"
+               description="COM_EESENDER_APIKEY_DESC" required="false"/>
+    </fieldset>
+    <fieldset name="permissions"
+              description="JCONFIG_PERMISSIONS_DESC"
+              label="JCONFIG_PERMISSIONS_LABEL">
+        <field name="rules" type="rules"
+               component="com_eesender"
+               filter="rules"
+               validate="rules"
+               label="JCONFIG_PERMISSIONS_LABEL"
+               section="component"/>
+    </fieldset>
+</config>
