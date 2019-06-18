@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * @author ElasticEmail
+ * @date: 2019-04-10
+ *
+ * @copyright  Copyright (C) 2010-2019 elasticemail.com . All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE
+ */
+defined('_JEXEC') or die('Restricted access');
     try {
         
         $accountAPI = new EEsenderAccount($params['apikey']);
@@ -68,21 +75,21 @@ if (empty($apikey) === false) {
  $apikey_val = substr($apikey, 0, 15) . '***************';
 }
 
-
 function test_before_saving(){
     $params = JComponentHelper::getParams('com_eesender');
     $appl = JFactory::getApplication();
-    $params->set('ee_emailtype', $_POST['ee_emailtype']);
-    $params->set('ee_enable', $_POST['ee_enable']);
+    $params->set('ee_emailtype', JFactory::getApplication()->input->getString('ee_emailtype'));
+    $params->set('ee_enable', JFactory::getApplication()->input->getString('ee_enable'));
     $unhashed = substr($params->get('apikey'), 0, 15) . '***************';
-    
-    if($_POST['ee_apikey'] == $unhashed)
-    {
-        $_POST['ee_apikey'] = $params->get('apikey');
-    }
+    $apiKey_login = JFactory::getApplication()->input->getString('ee_apikey');
 
+    if( $apiKey_login == $unhashed)
+    {
+        $apiKey_login = $params->get('apikey');
+    }
+  
     try{
-    $account = new EEsenderAccount($_POST['ee_apikey']);
+    $account = new EEsenderAccount($apiKey_login);
     }catch(EEsenderExceptions $e){
         return $appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . "None API key" . '</pre>', 'error');
     }
@@ -115,9 +122,9 @@ function test_before_saving(){
 
     $results = $db->loadObjectList();
        $db_params = json_decode($results[0]->params, true); 
-       $db_params['apikey'] = $_POST['ee_apikey'];
-       $db_params['ee_enable'] = $_POST['ee_enable'];
-       $db_params['ee_emailtype'] = $_POST['ee_emailtype'];
+       $db_params['apikey'] = $apiKey_login;
+       $db_params['ee_enable'] = JFactory::getApplication()->input->getString('ee_enable');
+       $db_params['ee_emailtype'] = JFactory::getApplication()->input->getString('ee_emailtype');
        $db_params['username'] =$account->data->email;
         $db_params = json_encode($db_params);
         

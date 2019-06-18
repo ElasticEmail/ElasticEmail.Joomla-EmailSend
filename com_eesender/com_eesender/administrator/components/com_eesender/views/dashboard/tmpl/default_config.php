@@ -14,7 +14,7 @@ function test_before_saving(){
     
     $appl = JFactory::getApplication();
     try{
-    $account = new EEsenderAccount($_POST['apikey']);
+    $account = new EEsenderAccount(JFactory::getApplication()->input->getString('apikey'));
     $user = $account->getDetails();
     }
     catch(EEsenderExceptions $e){
@@ -42,7 +42,7 @@ function test_before_saving(){
     
     $results = $db->loadObjectList();
        $db_params = json_decode($results[0]->params, true); 
-       $db_params['apikey'] = $_POST['apikey'];
+       $db_params['apikey'] = JFactory::getApplication()->input->getString('apikey');
        $db_params['username'] = $user->data->username;
        $db_params['ee_enable'] = 'yes';
     

@@ -33,7 +33,7 @@ require_once(JPATH_BASE.'/components/com_eesender/helpers/reports.php');
             
             <?php
             if (isset($_POST['daterange'])) {
-                $daterangeselect = $_POST['daterange'];
+                $daterangeselect = JFactory::getApplication()->input->getString('daterange');
                 if ($daterangeselect === 'last-mth') $datarangename = ' - last month';
                 if ($daterangeselect === 'last-wk') $datarangename = ' - last week';
                 if ($daterangeselect === 'last-2wk') $datarangename = ' - last two weeks';

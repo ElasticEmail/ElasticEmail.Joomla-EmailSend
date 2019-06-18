@@ -15,8 +15,6 @@ class eesenderViewDashboard extends JViewLegacy {
         $appl = JFactory::getApplication();
         $params = JComponentHelper::getParams('com_eesender');
         $apikey = $params->get('apikey');
-        
-    
         if (!empty($apikey)) {
             try {
                 $account = new EEsenderAccount($apikey);
@@ -27,6 +25,13 @@ class eesenderViewDashboard extends JViewLegacy {
                     throw new Exception("Your account is under review or disabled, contact with Elastic Email support or check if you have valid API key in your component settings.", 500);  
                     $tpl = 'wrong';
                 }
+                if($user->data->statusformatted == 'UnderReview')
+                {
+                    $tpl = 'wrong';
+                    $appl->enqueueMessage("<pre>Your account is under review or disabled, contact with Elastic Email support or check if you have valid API key in your component settings.</pre>","error");  
+                    
+                    
+                }
                
             } catch (Exception $e) {
                 $appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . $e->getMessage() . '</pre>', 'error');
@@ -36,13 +41,7 @@ class eesenderViewDashboard extends JViewLegacy {
             $tpl = 'config';
         }
         
-        if($user->data->statusformatted == 'UnderReview')
-        {
-            $tpl = 'wrong';
-            $appl->enqueueMessage("<pre>Your account is under review or disabled, contact with Elastic Email support or check if you have valid API key in your component settings.</pre>","error");  
-            
-            
-        }
+       
         $enabled_old = $this->check_for_old_ver();
         if($enabled_old){
         
