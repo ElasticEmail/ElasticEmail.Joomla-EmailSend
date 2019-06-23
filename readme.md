@@ -24,6 +24,14 @@ Thanks to this, you can track all the parameters of your delivery, use Private I
 3. Click the Browse button and select the extension package on your local machine.
 4. Click the Upload File & Install button.
 
+1.Download the extension "com_eesender.zip" to your local machine.
+2.From the backend of your Joomla site (administrator) select Extensions -> Manage -> Install.
+3.Click the Browse button and select the extension package on your local machine.
+4.Click the Upload File & Install button.
+
+Note: Elastic Email Mailer plugin by default is not activated. After configuring the Elastic Email Sender component, the plugin should activate by itself.
+
+If not: After configuring Elastic Email Component( by going under Components->Elastic Email Sender and providing valid API key) go under Extensions->Menage->Menage and find System - Elastic Email Mailer and if there is red cross - click it. The checkmark should appear. Now you have the full expirience of the Elastic Email Sender.
 
 Note: You can also go directly to the Elastic Email Sender Component and provide valid API key to your Elastic Email Account there. 
 After validation, you should see the component, and the plugin should be activated by itself.
