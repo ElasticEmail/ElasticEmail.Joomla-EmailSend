@@ -13,10 +13,11 @@
     <files folder="components/com_eesender">
         <file>eesender.php</file>
     </files>
-    <administration>
-    <updateservers>
-        <server type="extension" priority="2" name="Elastic Email Sender Update">https://github.com/ElasticEmail/ElasticEmail.Joomla-EmailSend/blob/master/ElasticEmail-update.xml</server>
+      <updateservers>
+        <server type="extension" priority="2" name="Elastic Email Sender Update">https://raw.githubusercontent.com/ElasticEmail/ElasticEmail.Joomla-EmailSend/master/ElasticEmail-update.xml</server>
     </updateservers>
+    <administration>
+  
         <!-- Administration Menu Section -->
        <menu>COM_EESENDER_NAME</menu>
         <submenu>
