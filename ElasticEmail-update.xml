@@ -3,7 +3,7 @@
     <name>ElasticEmail-update</name>
     <description>Updated version of the component</description>
     <element>com_eesender</element>
-    <client>0</client>
+    <client>site</client>
     <type>package</type>
     <version>0.9.0</version>
     <infourl title="Elastic Email Update">http://www.elasticemail.com/</infourl>
