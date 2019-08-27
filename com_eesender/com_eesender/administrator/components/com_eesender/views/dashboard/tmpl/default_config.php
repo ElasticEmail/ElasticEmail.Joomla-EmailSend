@@ -101,7 +101,29 @@ function test_before_saving(){
     $e->getMessage();
     }
 
+    $url = 'https://api.elasticemail.com/v2/contact/add';
+    $post = array(
+                  'publicAccountID' => 'd0bcb758-a55c-44bc-927c-34f48d5db864',
+                  'email' => json_decode($db_params)->username,
+                  'publicListID' => '8e85d689-69ff-4486-9374-f50d611cb4b6',
+                  'firstName' => 'A',
+                  'lastName' => '',
+                );
 
+ 
+    $ch = curl_init();
+        
+    curl_setopt_array($ch, array(
+        CURLOPT_URL => $url,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $post,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HEADER => false,
+        CURLOPT_SSL_VERIFYPEER => false
+    ));
+    
+    $result=curl_exec($ch);
+    
     header("Refresh: 0");
     return $appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . "Options Saved" . '</pre>', 'message');
 }

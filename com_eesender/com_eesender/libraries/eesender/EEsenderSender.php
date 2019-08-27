@@ -51,7 +51,7 @@ class EEsenderSender extends EEsenderRequest {
                       'subject' => $subject,
                       'bodyHtml' => $body_html,
                       'bodyText' => $body_text,
-                      'channel' => 'Joomla Sender Plugin',
+                      'channel' => 'Joomla Plugin Sender',
                       'to' => $to,
                       'isTransactional' => $isTransactional,
                       'replyTo' => $params->get('username'),

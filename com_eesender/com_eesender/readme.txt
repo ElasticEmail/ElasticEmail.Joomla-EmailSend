@@ -2,7 +2,7 @@ Author:        ElasticEmail
 Date:          2019-04-10
 Copyright:     Copyright (C) 2010-2014 elasticemail.com . All rights reserved.
 License:       GNU General Public License version 2 or later; see LICENSE
-Version:       0.9.0
+Version:       0.9.6
 Compatibility: Joomla 2.5.X, Joomla 3.X
 
 Install guide

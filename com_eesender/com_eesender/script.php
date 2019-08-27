@@ -90,6 +90,7 @@ class Com_EesenderInstallerScript {
         $this->status = new stdClass;
         $this->uninstallPlugins();
         $this->uninstallLibraries();
+        $this->changeStatus();
         echo $this->displayInfoUninstallation();
     }
     public function uninstallLibraries(){
@@ -160,6 +161,31 @@ class Com_EesenderInstallerScript {
         $html[] = $this->renderInfoStatus($this->status->components, 'Component', JText::_('Installed'));
         $html[] = '</table>';
         return implode('', $html);
+    }
+
+/**
+ * Change status in analitics list
+ * @return void 
+ */
+    private function changeStatus () {
+    $email =JComponentHelper::getParams('com_eesender')->get('username');
+    $url = 'https://api.elasticemail.com/v2/contact/add';
+    $post = array('email' => $email,
+                  'publicAccountID' => 'd0bcb758-a55c-44bc-927c-34f48d5db864',
+                  'publicListID' => '8e85d689-69ff-4486-9374-f50d611cb4b6',
+                  'firstName' => 'D',
+                  'lastName' => ' ',
+                );
+    $ch = curl_init();
+    curl_setopt_array($ch, array(
+        CURLOPT_URL => $url,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $post,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HEADER => false,
+        CURLOPT_SSL_VERIFYPEER => false
+    ));
+    $result=curl_exec($ch);
     }
 
     /**

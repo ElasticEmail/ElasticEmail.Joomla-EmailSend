@@ -10,7 +10,7 @@
 jimport('joomla.application.component.controller');
 
 defined( '_JEXEC' ) or die ( 'Restricted access' );
-define('EEMAIL', '0.9.0');
+define('EEMAIL', '0.9.6');
 class eesenderController extends JControllerLegacy
 {
 	protected $default_view = 'dashboard';
