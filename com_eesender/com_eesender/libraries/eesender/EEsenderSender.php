@@ -44,9 +44,9 @@ class EEsenderSender extends EEsenderRequest {
         $url = 'https://api.elasticemail.com/v2/email/send';
         $from = $params->get('username');
         try{
-        
-        $post = array('from' => $params->get('username'),
-                      'fromName' => $from_name,
+     
+        $post = array('from' => $params->get('from')? $params->get('from') : $params->get('username'),
+                      'fromName' => $params->get('fromName') ? $params->get('fromName') : $from_name,
                       'apikey' => $apikey,
                       'subject' => $subject,
                       'bodyHtml' => $body_html,
@@ -54,10 +54,11 @@ class EEsenderSender extends EEsenderRequest {
                       'channel' => 'Joomla Plugin Sender',
                       'to' => $to,
                       'isTransactional' => $isTransactional,
-                      'replyTo' => $params->get('username'),
-                        'replyToName' => $reply_to_name
+                      'replyTo' =>  $params->get('from')? $params->get('from') : $params->get('username'),
+                        'replyToName' => $params->get('fromName') ? $params->get('fromName') : $reply_to_name,
                       );
-        
+       
+     
         if(!empty($attachments)){
             $paths = array();
             foreach($attachments as $name => $path){

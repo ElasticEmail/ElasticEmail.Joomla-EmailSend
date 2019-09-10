@@ -71,6 +71,8 @@ defined('_JEXEC') or die('Restricted access');
 
 
 $apikey =JComponentHelper::getParams('com_eesender')->get('apikey');
+$from = JComponentHelper::getParams('com_eesender')->get('from');
+$fromName = JComponentHelper::getParams('com_eesender')->get('fromName');
 if (empty($apikey) === false) {
  $apikey_val = substr($apikey, 0, 15) . '***************';
 }
@@ -126,6 +128,29 @@ function test_before_saving(){
        $db_params['ee_enable'] = JFactory::getApplication()->input->getString('ee_enable');
        $db_params['ee_emailtype'] = JFactory::getApplication()->input->getString('ee_emailtype');
        $db_params['username'] =$account->data->email;
+
+       $from = JFactory::getApplication()->input->getString('ee_from');
+       $fromName = JFactory::getApplication()->input->getString('ee_fromName');
+       
+        if(!empty($from)){
+
+            if(filter_var($from,FILTER_SANITIZE_EMAIL) && filter_var($from, FILTER_VALIDATE_EMAIL)){
+                $db_params['from']= $from;
+            }else{
+                return $appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . "Invalid email adress." . '</pre>', 'error');
+            }
+        } else{
+            $db_params['from'] = NULL;
+        }
+        
+        if(!empty($fromName)){
+            if(filter_var($fromName,FILTER_SANITIZE_STRING)){
+                $db_params['fromName']= $fromName;
+            }
+        } else {
+            $db_params['fromName'] = NULL;
+        }
+       
         $db_params = json_encode($db_params);
         
 

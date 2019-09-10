@@ -85,6 +85,20 @@ JHtml::script('media/com_eesender/js/ees_scripts.js');
                         </label>
                     </td>
                      </tr>
+                     <tr>
+                 <th scope="row">Sender's Email:</th> <!--Elastic Email API Key -->
+                            <td>
+                            <input type="text" id="title" name="ee_from" value="<?php echo $from; ?>" style="width:280px">
+                           
+                            </td>
+                        </tr>
+                        <tr>
+                 <th scope="row">Sender's name:</th> <!--Elastic Email API Key -->
+                            <td>
+                            <input type="text" id="title" name="ee_fromName" value="<?php echo $fromName; ?>" style="width:280px">
+                           
+                            </td>
+                        </tr>
                  </tbody>
                 </table>
             <table class="form-table">
