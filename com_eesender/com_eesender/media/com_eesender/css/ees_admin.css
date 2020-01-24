@@ -1,200 +1,162 @@
-body.com_eemail{
-    background-color: #f1f1f1;
-    color: #444;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-}
 #eewp_plugin * {
-    box-sizing: border-box;
-    
-    
+    box-sizing: border-box
 }
-#title{
-    margin-top:5px;
-    height:30px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border: 1px solid #ddd;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
-    background-color: #fff;
-    color: #32373c;
-    outline: 0;
-    transition: 50ms border-color ease-in-out;
+#eewp_plugin li{
+    text-align:left;
 }
-#eewp_plugin img{
-    vertical-align: 0px;
-    padding-bottom: 2px;
-    padding-left: 1px;
+#eewp_plugin .ee_h4footer{
+    margin-top:56px;
 }
 
 #eewp_plugin .ee_row::after {
     content: "";
     clear: both;
-    display: table;
+    display: table
 }
-#eewp_plugin .form-table tr{
-    
-    padding-top: 5px;
-    padding-bottom:5px;
+
+#eewp_plugin [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0
 }
-#eewp_plugin .form-table th{
-    width:170px;
-    line-height: 50px;
-    text-align: left;
-    height: 60px;
-}
-#eewp_plugin .form-table tr td{
-    line-height: 50px;
-}
+
 .eewp_container {
-    height: -webkit-fill-available;
+    height: 100%;
     padding-top: 35px;
     padding-left: 28px;
-    padding-right: 28px;
-    
-    display: -webkit-inline-box;
+    padding-right: 28px
 }
 
 #eewp_plugin .ee_pagetitle {
-    padding: 0 0 2% 0;
+    padding: 10px 0
 }
 
 #eewp_plugin .ee_marketing {
-    padding: 0 3% 0 3%;
-    text-align: left;
-}
-
-#eewp_plugin .ee_line {
-    border-right: 2px solid #e0e0e0;
-    
-}
-
-#eewp_plugin .ee_marketing hr {
-    width: 80%;
-    text-align: center;
-    position: relative;
-    margin: 20px 30px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #fafafa;
-}
-
-#eewp_plugin .ee_success,
-#eewp_plugin .ee_error {
-    line-height: 32px;
-    width: 100%;
-    height: 32px;
-    display: block;
-    background-size: 21px 21px;
-    background-repeat: no-repeat;
-    padding-left: 30px;
-    background-position: left center;
+    padding: 50px 60px 24px
 }
 
 #eewp_plugin .ee_success {
-    background-image: url(data:image/png;base64,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);
-    margin-top: 10px;
+    color: #449d44
 }
 
 #eewp_plugin .ee_error {
-    background-image: url(data:image/png;base64,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);
-    margin-top: 10px;
+    color: #cb2e25
 }
 
 #eewp_plugin h1 {
-    font-size: 2rem;
+    font-size: 30px;
+    color: #32325c;
+    font-weight: normal
 }
 
 #eewp_plugin h2 {
-    font-size: 1.3rem;
+    font-size: 18px;
+    font-weight: normal;
+    color: #32325c
 }
 
 #eewp_plugin h4 {
-    font-size: 0.8rem;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #32325c
 }
 
-#eewp_plugin .ee_h2 {
-    padding: 0% 0% 3% 0%;
+#eewp_plugin .ee_p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #677389;
+    line-height:21px;
+    margin-top:24px;
 }
 
-#eewp_plugin .ee_h4 {
-    padding: 0% 0% 3% 0%;
+#eewp_plugin .margin-p-xs {
+    margin-top: 2px;
+    margin-bottom: 2px
+}
+
+#eewp_plugin .settings-box-form {
+    padding-top: 30px;
+    padding-bottom: 30px
 }
 
 #eewp_plugin .ee_header {
     position: relative;
-    padding-top: 10px;
-}
+    display:flex;
+    align-items: center;
 
-#eewp_plugin .ee_footer {
-    padding-top: 98px;
 }
 
 #eewp_plugin .ee_logo {
     background: white;
-    width: 31px;
+    width: 30px;
     height: 30px;
     border-radius: 30px;
-    display: inline-block;
-    line-height: 44px;
-    padding-left: 5px;
-}
-
-#eewp_plugin .ee_pagetitle {
-    padding-left: 5px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    line-height: 38px;
+    padding-left: 5px
 }
 
 #eewp_plugin .ee_account-status-active {
-    color: green;
-    font-weight: bold;
+    color: #449d44
 }
 
 #eewp_plugin .ee_account-status-deactive {
-    color: red;
-    font-weight: bold;
+    color: #cb2e25
 }
 
 #eewp_plugin .ee_reports-container {
-    width: 100%;
+    width: 100%
 }
 
 #eewp_plugin .ee_reports-list {
-    padding-top: 5%;
+    padding-top: 5%
 }
 
 #eewp_plugin #canvas-holder {
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto
 }
 
 #eewp_plugin .ee_report-table th {
     line-height: 2;
     text-align: center;
-    font-size: 18px;
+    font-size: 18px
 }
 
 #eewp_plugin .ee_report-table td {
     line-height: 3;
     text-align: center;
-    font-size: 18px;
+    font-size: 18px
+}
+
+#eewp_plugin .empty-chart {
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #f9c053
+}
+
+#eewp_plugin .empty-chart img {
+    width: 360px
 }
 
 #eewp_plugin .ee_alert-account {
-    color: red;
+    color: red
 }
 
 #eewp_plugin .ee_warning-account {
-    color: #ecb710;
+    color: #ecb710
 }
 
 #eewp_plugin .ee_ok-account {
-    color: green;
+    color: green
 }
 
 #eewp_plugin .ee_standard-account {
-    color: #444444;
+    color: #444
 }
 
 #eewp_plugin .ee_default-text {
-    color: #cccccc;
+    color: #ccc
 }
 
 #eewp_plugin .ee_connect-alert {
@@ -204,28 +166,27 @@ body.com_eemail{
     margin-bottom: 30px;
     padding: 20px;
     width: 100%;
-    background-color: #ffbbbb;
+    background-color: #fbb
 }
 
 #eewp_plugin .ee_connect-alert h1 {
     font-size: 14px;
     line-height: 1.3;
-    color: #3f3f3f;
+    color: #3f3f3f
 }
 
 #eewp_plugin .ee_select-form-box {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 20px
 }
 
 #eewp_plugin .ee_select-form {
-    display: inline-block;
+    display: inline-block
 }
 
-/* tooltip */
 #eewp_plugin .ee_tooltip {
     position: relative;
-    display: inline-block;
+    display: inline-block
 }
 
 #eewp_plugin .ee_tooltip .ee_tooltiptext {
@@ -241,7 +202,7 @@ body.com_eemail{
     left: 50%;
     margin-left: -60px;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s
 }
 
 #eewp_plugin .ee_tooltip .ee_tooltiptext::after {
@@ -252,300 +213,320 @@ body.com_eemail{
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: #555 transparent transparent transparent
 }
 
 #eewp_plugin .ee_tooltip:hover .ee_tooltiptext {
     visibility: visible;
-    opacity: 1;
+    opacity: 1
 }
 
 #eewp_plugin .ee_tootlip-icon {
     width: 14px;
-    margin-bottom: -4px;
+    margin-bottom: -4px
 }
 
 #eewp_plugin .ee_tooltiptext a {
-    color: #fff;
+    color: #fff
 }
+
 #eewp_plugin .ee_title_small {
-    font-weight: bold;
+    font-weight: bold
 }
 
-#eewp_plugin .ee_button {
-    background-color: #fdb106;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    min-width: 98px;
-    cursor: pointer;
-    line-height: 0;
-    border-radius: 3px;
-    min-height: 28px;
-}
-
-#eewp_plugin .ee_button_resend {
-    background-color: #fdb106;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    padding: 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    min-width: 68px;
-    cursor: pointer;
-    line-height: 0;
-    border-radius: 3px;
-    min-height: 15px;
-}
-
-#eewp_plugin .ee_linkbutton-del {
-    background-color: #CB2E25;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    min-width: 59px;
-    cursor: pointer;
-    line-height: 0;
-    border-radius: 3px;
-    min-height: 16px;
-}
-
-#eewp_plugin .ee_linkbutton-add {
-    background-color: #2699FB;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    min-width: 59px;
-    cursor: pointer;
-    line-height: 0;
-    border-radius: 3px;
-    min-height: 16px;
-}
-
-#eewp_plugin .listist {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-#eewp_plugin .listist_header {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background: #F9C053;
-    color: #32325C;
-}
-
-#eewp_plugin .listist_add {
-    padding-top: 35px;
-    padding-bottom: 5px;
-    color: white;
-}
-
-#eewp_plugin .ee-plugin-input {
-    border: 1px solid #E6E6F2;
+#eewp_plugin input[type=text] {
+    padding: 0 8px;
+    line-height: 2;
+    min-height: 30px;
+    box-shadow: 0 0 0 transparent;
     border-radius: 4px;
-    width: 60%;
+    border: 1px solid #7e8993;
+    background-color: #fff;
+    color: #32373c;
+    width: 50%
 }
 
-#eewp_plugin .listist:nth-child(2n) {
-    background: #e6e2e2;
+#eewp_plugin input[type=text]:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+    outline: 2px solid transparent
+}
+
+#eewp_plugin .form_success {
+    color: #449d44
+}
+
+#eewp_plugin .form_error {
+    color: #cb2e25
 }
 
 #eewp_plugin input[type="submit"]:disabled {
     background: #ebedef;
-    color: #ffffff;
-    cursor: not-allowed;
+    color: #fff;
+    cursor: not-allowed
+}
+#eewp_plugin input[type='submit'],
+#eewp_plugin #sendTest {
+    background: #32325C;
+    color:#fff;
+    padding:6px 12px;
+    font-size:14px;
+    border:none;
+    border-radius:4px;
+    text-transform: none;
+    margin-top:24px;
 }
 
 #eewp_plugin input[type="text"]:disabled {
     background: #ebedef;
-    color: #ffffff;
-    cursor: not-allowed;
-}
-
-#eewp_plugin .ee_deletebtn {
-    background-color: #fd4949;
+    color: #fff;
+    cursor: not-allowed
 }
 
 #eewp_plugin .ee_checkbox {
     background-color: white;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 3px
 }
 
 #eewp_plugin .ee_nopadding {
-    padding: 0px;
+    padding: 0
+}
+
+#eewp_plugin .ee_colorsetter {
+    min-height: 148px;
+    padding: 0 5px 10px 5px
 }
 
 #eewp_plugin .ee_namelist {
     min-height: 128px;
-    padding: 0px 5px 10px 5px;
+    padding: 0 5px 10px 5px
 }
 
 #eewp_plugin .ee_checkboxlist {
     min-height: 188px;
-    padding: 0px 5px 10px 5px;
+    padding: 0 5px 10px 5px
 }
 
 #eewp_plugin .ee_newilstinput {
-    min-height: 112px;
-    padding: 0px 5px 10px 5px;
+    min-height: 154px;
+    padding: 0 5px 10px 5px
 }
 
 #eewp_plugin .ee_selectedlist {
-    padding: 0px 5px 10px 5px;
+    padding: 0 5px 10px 5px
 }
 
 #eewp_plugin .ee_chceckboxlist {
-    padding: 4px 5px 4px 5px;
+    padding: 4px 5px 4px 5px
 }
 
 #eewp_plugin .ee_buttonpadding {
     height: 100px;
-    padding: 32px 5px 18px 0px;
+    padding: 32px 5px 18px 0
 }
 
 #eewp_plugin .ee_containerfull {
-    width: 100%;
+    width: 100%
 }
 
 #eewp_plugin .ee_addedlist-success {
     color: green;
     padding-top: 22px;
-    font-weight: bold;
+    font-weight: bold
 }
 
 #eewp_plugin .ee_addedlist-warning {
     color: orange;
     padding-top: 22px;
-    font-weight: bold;
+    font-weight: bold
 }
 
 #eewp_plugin .ee_addedlist-info {
-    color: orange;
+    color: orange
 }
 
 #eewp_plugin .ee_refrestlists {
-    cursor: pointer;
+    cursor: pointer
 }
 
 #eewp_plugin .ee_colorsetterbox p {
     margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-#eewp_plugin .ee_colorsetter {
-    min-height: 250px;
+    margin-bottom: 2px
 }
 
 #eewp_plugin .ee_clearfix {
-    overflow: auto;
+    overflow: auto
 }
 
 #eewp_plugin .ee_tablestyle {
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     min-height: 50px;
-    overflow: hidden;
+    overflow: hidden
 }
 
 #eewp_plugin .form-control {
     margin-top: 5px;
-    margin-bottom: 5px;
-    height: 28px;
+    margin-bottom: 5px
 }
 
 #eewp_plugin .ee_button-subscribe {
-    padding-top: 15px;
-    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px
 }
 
-@media screen and (min-width: 992px) {
-    #eewp_plugin .form-control {
-        width: 45%;
-        height:28px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    #eewp_plugin .form-control {
-        width: 100%;
-    }
-
-    #eewp_plugin .ee_marketing {
-        display: none;
-    }
-
-    #eewp_plugin .ee_line {
-        border-right: none;
-    }
-}
-
-#subscribe-inputs .form_error {
-    color: #f33;
-}
-
-#subscribe-inputs .form_error,
-#eewp_plugin .hide {
-    display: none;
-}
-
-#ee-success {
-    text-align: center;
-    border: 1px solid #1b4;
-    padding: 10px;
-}
-
-#eewp_plugin .text-center {
-    text-align: center;
-}
-
-#eewp_plugin .text-left {
-    text-align: left;
-}
-
-#eewp_plugin .text-right {
-    text-align: right;
-}
-#subscribe-inputs{
-    padding-left: 15px;
-}
-
-.form-control {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 28px;
-    width: 300px;
-    text-align: center;
-}
-.ee_button {
-    background-color: #fdb106;
+#eewp_plugin .ee_button-test {
+    background-color: #2699fb;
     text-transform: uppercase;
-    border: none;
+    border: 0;
     color: white;
     padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    min-width: 98px;
+    min-width: 48px;
     cursor: pointer;
     line-height: 0;
     border-radius: 3px;
-    min-height: 28px;
+    min-height: 28px
+}
+
+#eewp_plugin .ee_button-test:hover {
+    background-color: #5eaef3
+}
+
+#eewp_plugin .error-email {
+    line-height: 1;
+    margin: 2px 6px
+}
+
+#eewp_plugin .test-button-box {
+    padding-top: 25px
+}
+
+#eewp_plugin .section-marketing {
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+@media screen and (min-width:992px) {
+    #eewp_plugin .form-control {
+        width: 45%
+    }
+}
+
+@media screen and (max-width:991px) {
+    #eewp_plugin .form-control {
+        width: 100%
+    }
+    #eewp_plugin .ee_marketing {
+        display: none
+    }
+    #eewp_plugin .ee_line {
+        border-right: 0
+    }
+}
+
+#subscribe-inputs .form_error {
+    color: #f33
+}
+
+#ee-success {
+    text-align: center;
+    border: 1px solid #1b4;
+    padding: 10px
+}
+
+#eewp_plugin .text-center {
+    text-align: center
+}
+
+#eewp_plugin .text-left {
+    text-align: left
+}
+
+#eewp_plugin .text-right {
+    text-align: right
+}
+
+#eewp_plugin .table-slim th,
+#eewp_plugin th {
+    font-size: 14px;
+    font-weight: normal;
+    color: #282f37;
+    padding: 15px 0px;
+    text-align: left;
+    min-width: 150px;
+
+    
+}
+
+#eewp_plugin .table-slim td,
+#eewp_plugin td {
+    padding: 10px 20px;
+    padding-top:15px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #4c535b
+}
+
+#eewp_plugin .connection-error-container {
+    padding-top: 200px;
+    text-align: center
+}
+
+#eewp_plugin .ee_send-test-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+#eewp_plugin .ee_send-test-container .form-group input[type="text"],
+#eewp_plugin .ee_send-test-container .form-group textarea,
+#eewp_plugin .ee_send-test-container .form-group input[type="email"] {
+    width: 50%;
+    padding: 16px;
+    border: 1px solid #7e8993;
+}
+
+#eewp_plugin .test-ok {
+    color: #449d44
+}
+
+#eewp_plugin .test-error {
+    color: #f33
+}
+
+#eewp_plugin .loader {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite
+}
+
+@-webkit-keyframes spin {
+    0 {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    0 {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+#eewp_plugin .hide {
+    display: none
 }

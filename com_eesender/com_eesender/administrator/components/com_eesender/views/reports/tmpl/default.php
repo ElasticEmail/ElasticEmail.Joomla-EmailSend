@@ -11,6 +11,7 @@ defined('_JEXEC') or die('Restricted access');
 JHtml::stylesheet('media/com_eesender/css/bootstrap-grid.min.css');
 JHtml::stylesheet('media/com_eesender/css/ees_admin.css');
 JHtml::script('media/com_eesender/js/chart.min.js');
+JHtml::script('media/com_eesender/js/jquery.min.js');
 JHtml::script('media/com_eesender/js/ees_scripts.js');
 
 $http = JHttpFactory::getHttp(null, array ("curl", "stream"));
@@ -49,21 +50,21 @@ require_once(JPATH_BASE.'/components/com_eesender/helpers/reports.php');
                 <h1> Reports <?php echo $datarangename; ?></h1>
                 </div>
         
-
-        <?php
-        if ((empty($total) === true || $total === 0)) :
-            $total = '<span class="ee_default-text">' . 150000 . '</span>';
-            $delivered = '<span class="ee_default-text">' . 100000 . '</span>';
-            $opened = '<span class="ee_default-text">' . 85000 . '</span>';
-            $bounced = '<span class="ee_default-text">' . 4000 . '</span>';
-            $clicked = '<span class="ee_default-text">' . 95000 . '</span>';
-            $unsubscribed = '<span class="ee_default-text">' . 4000 . '</span>';
-            $info = '<div class="ee_connect-alert"><h1>' . 'Please note, that the data below is an example. Send your first campaign, to get the real statistics.'. '</h1></div>';
-        endif;
-
-        if ((empty($error)) === TRUE) {
-            ?>
         </div>
+        <?php
+
+        if ((empty($total) === true || $total === 0)) {
+            echo '
+                            <div class="empty-chart" style="width:80%;">
+                                <img src="/joomla/media/com_eesender/img/assets_images_template-empty.svg"/>
+                                <p class="ee_p">No data to display. Send campaign to see results</p>
+                            </div>';
+
+        };
+
+        if ((empty($error)) === TRUE && $total > 0) {
+            ?>
+        
             <div class="ee_select-form-box">
                 <form name="form" id="daterange" action="" method="post">
                     Date range:
@@ -84,27 +85,27 @@ require_once(JPATH_BASE.'/components/com_eesender/helpers/reports.php');
             <div class="ee_reports-container">
   
                 <div class="row">
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(102, 163, 163, 0.2);"> Submitted </p>
                         <p><?php if (is_numeric($total)) : echo number_format($total); else: echo $total; endif; ?></p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(0, 153, 255, 0.2);"> Delivered</p>
                         <p><?php if (is_numeric($delivered)) : echo number_format($delivered); else: echo $delivered; endif; ?></p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(0, 128, 0, 0.2);"> Opened </p>
                         <p><?php if (is_numeric($opened)) : echo number_format($opened); else: echo $opened; endif; ?></p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(255, 159, 64, 0.2);"> Clicked </p>
                         <p><?php if (is_numeric($clicked)) : echo number_format($clicked); else: echo $clicked; endif; ?></p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(255, 162, 0, 0.2);"> Unsubscribed </p>
                         <p><?php if (is_numeric($unsubscribed)) : echo number_format($unsubscribed); else: echo $unsubscribed; endif; ?></p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
+                    <div class="col-12 col-md-2 text-center" style="padding:0 48px">
                         <p style="background: rgba(255, 0, 0, 0.2);"> Bounced </p>
                         <p><?php if (is_numeric($bounced)) : echo number_format($bounced); else: echo $bounced; endif; ?></p>
                     </div>
@@ -146,19 +147,7 @@ require_once(JPATH_BASE.'/components/com_eesender/helpers/reports.php');
                     Share your experience of using Elastic Email Joomla Plugin by <a href="#"> rating us here.</a> Thanks!
                 </h4>
             </div>
-        <?php } else { ?>
-
-            <div class="">
-                <div class="" style="text-align: center; padding-top: 10%; padding-bottom: 5%;">
-                    <img src="/assets/images/connect_apikey.png" >
-                </div>
-                <div class="ee_connect-alert">
-                    <h1>
-                        Oops! Your Elastic Email account has not been connected. Configure the settings to start using the plugin.
-                    </h1>
-                </div>
-            </div>
-        <?php } ?>
+        <?php }?>
     </div> 
         
         

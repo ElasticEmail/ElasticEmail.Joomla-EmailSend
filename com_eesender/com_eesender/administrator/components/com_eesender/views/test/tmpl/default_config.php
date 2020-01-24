@@ -47,7 +47,7 @@ function test_before_saving(){
        $db_params['ee_enable'] = 'yes';
     
         $db_params = json_encode($db_params);
-    
+        
 
     $query = $db->getQuery(true);
     

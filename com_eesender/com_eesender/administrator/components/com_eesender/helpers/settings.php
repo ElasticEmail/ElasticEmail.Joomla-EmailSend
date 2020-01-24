@@ -33,7 +33,7 @@ defined('_JEXEC') or die('Restricted access');
     }
 
     if (isset($account->data->email)) {
-        $params->set('ee_accountemail', $account->data->email);
+        $params->set('username', $account->data->email);
     }
 
     $accountdailysendlimit = '';
@@ -118,7 +118,7 @@ function test_before_saving(){
     
     
     $db->setQuery($query);
-    $accountAPI = new EEsenderAccount($params['apikey']);
+    $accountAPI = new EEsenderAccount($apiKey_login);
     $account = $accountAPI->getDetails();
     
 
@@ -181,6 +181,7 @@ function test_before_saving(){
     $e->getMessage();
     }
     header("Refresh: 0");
-    return $appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . "Options Saved" . '</pre>', 'message');
+    return;
+   
 }
 

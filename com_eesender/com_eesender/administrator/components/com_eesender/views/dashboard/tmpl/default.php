@@ -12,11 +12,11 @@ defined('_JEXEC') or die('Restricted access');
 $http = JHttpFactory::getHttp(null, array ("curl", "stream"));
 $params = JComponentHelper::getParams('com_eesender');
 require_once(JPATH_BASE.'/components/com_eesender/helpers/settings.php');
-
 if(isset($_POST['ee_apikey'])){
 
 test_before_saving();
- 
+$appl = JFactory::getApplication();
+$appl->enqueueMessage(JText::_('COM_EESENDER_SERVER_RESPONSE') . ": <pre>" . "Options Saved" . '</pre>', 'message');
 }
 
 JHtml::stylesheet('media/com_eesender/css/bootstrap-grid.min.css');
@@ -36,11 +36,11 @@ JHtml::script('media/com_eesender/js/ees_scripts.js');
                 <h1>General Settings</h1>
             </div>
         </div>
-        <h4 class="ee_h4">
+        <p class="ee_p">
             Welcome to Elastic Email Joomla Plugin!<br> From now on, you can send your emails in the fastest and most reliable way!<br>
             Just one quick step and you will be ready to rock your subscribers' inbox.<br><br>
             Fill in the details about the main configuration of Elastic Email connections.        </h4>
-        <form method="post" action= "#">
+        <form method="post" action= "#" style="margin-top:56px">
             
             <table class="form-table">
                 <tbody>
@@ -184,11 +184,12 @@ JHtml::script('media/com_eesender/js/ees_scripts.js');
 
 
                 <!-- add link -->
-        <h4>
+      
+        <div class="">
+        <h4 class="ee_h4footer">
             Want to use this plugin in a different language version? <a href="https://support.elasticemail.com/">Let us know or help us translate it!</a>
         </h4>
-        <div class="">
-            <h4 class="ee_h4footer">
+            <h4>
                 Share your experience of using Elastic Email Joomla Plugin by <a href="https://support.elasticemail.com">sendig us Your opinion</a> Thanks!            </h4>
             </div>
  </div>
