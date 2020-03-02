@@ -14,7 +14,8 @@ class EEsenderSender extends EEsenderRequest {
         parent::__construct($apikey);
         //Other init option;
     }
-
+    
+    
     /**
      * http://elasticemail.com/api-documentation/send
      * @param EEmail $email
@@ -26,12 +27,8 @@ class EEsenderSender extends EEsenderRequest {
             throw new EEsenderExceptions('Error: No recipient');
         }   
         $params = JComponentHelper::getParams('com_eesender');         
-       
-    
-     
+        
      return  $this->send_att($params->get('apikey'), $email->to, $email->from, $email->from_name, $email->subject, $email->body_html, $email->body_txt, $email->reply_to, $email->reply_to_name, $email->charset, $isTransactional = false, $email->lists, $email->attachments);              
-                   
-
 
     }
 
@@ -54,11 +51,11 @@ class EEsenderSender extends EEsenderRequest {
                       'channel' => 'Joomla Plugin Sender',
                       'to' => $to,
                       'isTransactional' => $isTransactional,
-                      'replyTo' =>  $params->get('from')? $params->get('from') : $params->get('username'),
-                        'replyToName' => $params->get('fromName') ? $params->get('fromName') : $reply_to_name,
+                      'replyTo' =>  $reply_to ? $reply_to :  ($params->get('from') ? $params->get('from')  :  $params->get('username')),
+                        'replyToName' => $reply_to_name ? $reply_to_name : $params->get('fromName'),
                       );
-       
-     
+
+
         if(!empty($attachments)){
             $paths = array();
             foreach($attachments as $name => $path){
