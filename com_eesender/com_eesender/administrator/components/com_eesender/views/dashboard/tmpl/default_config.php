@@ -141,7 +141,7 @@ if(isset($_POST['apikey'])){
 <div class="eemail egrid">
     <div class="erow">
         <div class="espan10 eoffset1 text-center">
-            <br/><br/>
+            <br /><br />
             <p style="font-weight:bold;font-size:15px">
                 <?php 
                 if($params->get('apikey')){
@@ -150,27 +150,28 @@ if(isset($_POST['apikey'])){
                 }else{
                 echo JText::_('COM_EESENDER_NOCONFIG');
                 ?></p>
-                <br/>
-                <p><?php echo JText::sprintf('COM_EESENDER_GET_API_KEY', 'https://elasticemail.com/account'); ?></p>
-                <?php
+            <br />
+            <p><?php echo JText::sprintf('COM_EESENDER_GET_API_KEY', 'https://elasticemail.com/account'); ?></p>
+            <?php
                 }
                 ?>
-            
-            
-            <br/>
+
+
+            <br />
             <p><?php echo JText::sprintf('COM_EESENDER_SUPPORT', 'https://help.elasticemail.com'); ?></p>
             <p>
 
-            <?php if(!$params->get('apikey')){ ?>
+                <?php if(!$params->get('apikey')){ ?>
 
-            <form class="config-form" method="POST" action="#">
-                <div>
-                    <input name="apikey" id='apikey' placeholder="Enter Your APIkey" value="" class="form-control">
+                <form class="config-form" method="POST" action="#">
+                    <div>
+                        <input name="apikey" id='apikey' placeholder="Enter Your APIkey" value="" class="form-control">
                     </div>
-                
-            <input type="submit" name="submit" value="Register with this API key" class="ee_button">
-            </form>
-            <?php } ?>
+
+                    <input type="submit" name="submit" value="Register with this API key" class="ee_button"
+                        style="margin-top: 16px;">
+                </form>
+                <?php } ?>
         </div>
     </div>
     <div class="erow">
@@ -179,4 +180,3 @@ if(isset($_POST['apikey'])){
         </div>
     </div>
 </div>
-

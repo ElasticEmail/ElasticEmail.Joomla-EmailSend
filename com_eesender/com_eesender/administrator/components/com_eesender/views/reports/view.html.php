@@ -23,16 +23,14 @@ class eesenderViewreports extends JViewLegacy {
                 $user = $account->getDetails();
                
                 
-                if($user->success == false){
-                    throw new Exception("Your account is under review or disabled, contact with Elastic Email support or check if you have valid API key in your component settings.", 500);  
+                if($user->success === false){
+                    throw new Exception("Something went wrong with loading your account. Please contact Elastic Email support or check if you have valid API key in your component settings.", 500);  
                     $tpl = 'wrong';
                 }
-                if($user->data->statusformatted == 'UnderReview')
+                if($user->data->statusformatted === 'UnderReview')
                 {
                     $tpl = 'wrong';
                     $appl->enqueueMessage("<pre>Your account is under review or disabled, contact with Elastic Email support or check if you have valid API key in your component settings.</pre>","error");  
-                    
-                    
                 }
                
             } catch (Exception $e) {

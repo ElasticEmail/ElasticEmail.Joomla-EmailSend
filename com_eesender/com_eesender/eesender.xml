@@ -6,32 +6,29 @@
     <copyright>(C) 2019 Elastic Email </copyright>
     <authorEmail>supportteam@elasticemail.com</authorEmail>
     <authorUrl>https://elasticemail.com</authorUrl>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
     <description>Elastic Email is a simple, fast email delivery service for your transactional or marketing email management extension for Joomla that utilises the Elastic Email API to ensure the best possible experience for your users when sending emails. No monthly committments, no minimums, no limits on all the tools you need.</description>
     <scriptfile>script.php</scriptfile>
     <files folder="components/com_eesender">
         <file>eesender.php</file>
     </files>
-      <updateservers>
+    <updateservers>
         <server type="extension" priority="2" name="Elastic Email Sender Update">https://raw.githubusercontent.com/ElasticEmail/ElasticEmail.Joomla-EmailSend/master/ElasticEmail-update.xml</server>
     </updateservers>
     <administration>
-  
+
         <!-- Administration Menu Section -->
-       <menu>COM_EESENDER_NAME</menu>
+        <menu>COM_EESENDER_NAME</menu>
         <submenu>
-			<!--
+            <!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_eesender"
-				alt="Elastic Email Sender/Settings">COM_EESENDER_SETTINGS_NAME</menu>
-			<menu link="option=com_eesender&amp;view=reports"
-				view="reports" alt="Elastic Email Sender/Reports">COM_EESENDER_REPORTS_NAME</menu>
-                <menu link="option=com_eesender&amp;view=test"
-				view="test" alt="Elastic Email Sender/Reports">COM_EESENDER_TEST_NAME</menu>
-		</submenu>
+            <menu link="option=com_eesender" alt="Elastic Email Sender/Settings">COM_EESENDER_SETTINGS_NAME</menu>
+            <menu link="option=com_eesender&amp;view=reports" view="reports" alt="Elastic Email Sender/Reports">COM_EESENDER_REPORTS_NAME</menu>
+            <menu link="option=com_eesender&amp;view=test" view="test" alt="Elastic Email Sender/Reports">COM_EESENDER_TEST_NAME</menu>
+        </submenu>
         <!-- Administration Main File Copy Section -->
         <files folder="administrator/components/com_eesender">
             <!-- Admin Main File Copy Section -->
@@ -42,14 +39,14 @@
             <folder>views</folder>
         </files>
         <files folder="administrator/components/com_eesender/views">
-        <folder>dashboard</folder>
-        <folder>reports</folder>
+            <folder>dashboard</folder>
+            <folder>reports</folder>
         </files>
         <languages folder="administrator/components/com_eesender/language">
             <language tag="en-GB">en-GB/en-GB.com_eesender.ini</language>
             <language tag="en-GB">en-GB/en-GB.com_eesender.sys.ini</language>
         </languages>
-    </administration>        
+    </administration>
     <media destination="com_eesender" folder="media/com_eesender">
         <folder>css</folder>
         <folder>img</folder>
